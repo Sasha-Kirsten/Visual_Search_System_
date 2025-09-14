@@ -12,7 +12,7 @@ from lightly.data import LightlyDataset
 from lightly.transforms import SimCLRTransform, utils
 
 
-dataset = LightlyDataset("", transform=None)
+dataset = LightlyDataset("\Users\Besitzer\Desktop\Image_Dataset", transform=None)
 
 dataloader = torch.utils.DataLoader(
     dataset, batch_size=256, shuffle=True,
