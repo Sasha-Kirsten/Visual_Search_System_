@@ -12,4 +12,10 @@ from lightly.data import LightlyDataset
 from lightly.transforms import SimCLRTransform, utils
 
 
+dataset = LightlyDataset("", transform=None)
+
+dataloader = torch.utils.DataLoader(
+    dataset, batch_size=256, shuffle=True,
+    drop_last=True, num_workers=8
+)
 
