@@ -6,22 +6,19 @@ import torch
 import torch.nn as nn
 import torchvision
 from PIL import Image
-# from sklearn.neighbors import NearestNeighbors
-# from sklearn.preprocessing import normalize
-from sklearn.model_selection import train_test_split
-import os
+from sklearn.neighbors import NearestNeighbors
+from sklearn.preprocessing import normalize
 
 from lightly.data import LightlyDataset
 from lightly.transforms import SimCLRTransform, utils
 
-transform = SimCLRTransform(input_size=32, gaussian_blur=0.2)
 
-# dataset = LightlyDataset("\Users\Besitzer\Desktop\Image_Dataset", transform=transform)
+dataset = LightlyDataset("\Users\Besitzer\Desktop\Image_Dataset", transform=None)
 
-# dataloader = torch.utils.DataLoader(
-#     dataset, batch_size=256, shuffle=True,
-#     drop_last=True, num_workers=8
-# )
+dataloader = torch.utils.DataLoader(
+    dataset, batch_size=256, shuffle=True,
+    drop_last=True, num_workers=8
+)
 
 
 
