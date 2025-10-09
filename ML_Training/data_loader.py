@@ -1,5 +1,4 @@
 import shutil
-# import matplotlib.pyplot as plt
 import numpy as np
 import pytorch_lightning as pl
 import torch
@@ -114,7 +113,6 @@ def create_train_val_split(source_dir, output_base_dir, val_size=0.1, random_see
         val_size (float): Proportion of data to use for validation (e.g., 0.1 for 10%).
         random_seed (int): Seed for reproducible splits.
     """
-    # Get all image file paths
     source_path = Path(source_dir)
     all_images = [
         f for f in source_path.iterdir() 
@@ -123,27 +121,22 @@ def create_train_val_split(source_dir, output_base_dir, val_size=0.1, random_see
     
     print(f"Found {len(all_images)} total images.")
     
-    # Split the list of image paths
     train_list, val_list = train_test_split(
         all_images, 
         test_size=val_size, 
         random_state=random_seed
     )
     
-    # Define output paths
     train_dir = Path(output_base_dir) / "train"
     val_dir = Path(output_base_dir) / "val"
     
-    # Create output directories
     train_dir.mkdir(parents=True, exist_ok=True)
     val_dir.mkdir(parents=True, exist_ok=True)
     
-    # Function to copy files to a destination
     def copy_files(file_list, destination):
         for file_path in file_list:
             shutil.copy2(file_path, destination / file_path.name)
     
-    # Copy the files to their new folders
     print("Copying training images...")
     copy_files(train_list, train_dir)
     print("Copying validation images...")
@@ -156,7 +149,6 @@ def create_train_val_split(source_dir, output_base_dir, val_size=0.1, random_see
     print(f"Validation folder: {val_dir}")
 
 if __name__ == '__main__':
-    # --- CONFIGURATION: Set your paths here ---
     SOURCE_DIR = r"C:\Users\Besitzer\Desktop\Dataset"
     OUTPUT_DIR = r"C:\Users\Besitzer\Desktop\Image_Dataset_Split"
     
