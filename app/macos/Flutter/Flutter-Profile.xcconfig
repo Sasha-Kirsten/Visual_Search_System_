@@ -1,0 +1,4 @@
+
+ARCHS[sdk=macos*]=x86_64
+EXCLUDED_ARCHS[sdk=macos*]=arm64
+ONLY_ACTIVE_ARCH=YES
