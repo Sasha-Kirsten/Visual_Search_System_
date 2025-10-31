@@ -1,0 +1,10 @@
+
+# Flutter
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+.packages
+pubspec.lock
+
